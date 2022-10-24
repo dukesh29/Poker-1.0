@@ -40,6 +40,12 @@ button:hover {
     margin-top: 20px;
 }
 
+.handsValue {
+    font-weight: bold;
+    font-size: 18px;
+    background: white;
+}
+
 .playingCards .card {
     display: inline-block;
     width: 3.3em;

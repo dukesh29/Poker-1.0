@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import CardView from "./CardView/CardView";
 import CardDeck from "./lib/CardDeck";
+import PokerHand from "./lib/PokerHand";
 
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
   const cardsTake = () => cards.getCards(5);
   const [cardsFinal, setNumber] = useState(cards.getCards(5));
 
+  const hand = new PokerHand();
+  const handValue = hand.getOutcome(cardsFinal);
 
   const changeCard = () => {
     setNumber(cardsTake);
@@ -53,7 +56,7 @@ function App() {
 
   return (
     <div className="container">
-
+      <div className="handsValue"> Your hands: {handValue}</div>
       <div className="playingCards faceImages">
         <CardView suit={classes[0]} rank={cardsFinal[0]['rank']} classes={classes[0]} suitSym={suitArr[0]} />
         <CardView suit={classes[1]} rank={cardsFinal[1]['rank']} classes={classes[1]} suitSym={suitArr[1]} />
